@@ -2,8 +2,7 @@ let continuar = true
 let importe = 0
 const IVA = 1.21
 
-var anoNacimiento = ("Bienvenido! 😎 \n" +
-"Ingresa tu año de nacimiento por favor (YYYY)");
+var nacimiento = 1234
 
 const beer = "🍻Elije el tipo de cerveza que deseas destapar: \n" +
     "a) Vera Ipa \n" +
@@ -12,8 +11,9 @@ const beer = "🍻Elije el tipo de cerveza que deseas destapar: \n" +
     "d) Bohemian Pilsener \n" +
     "e) Hoppy Larger \n"
 
-let nacimiento = prompt (anoNacimiento)
-    if (nacimiento > 2005){
+var nacimiento = prompt ("Bienvenido! 😎 \n" +
+                "Ingresa tu año de nacimiento por favor (YYYY)")
+    if (nacimiento > "2005" && nacimiento != (typeof num)){
         alert ("😩 Lo siento mucho! \n" + 
         "Podrás ingresar cuando hayas cumplido los 18! \n")
     }
