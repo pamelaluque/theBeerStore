@@ -38,9 +38,12 @@ function iniciarCompra (){
                 carrito.push (sumarArticulo)
                 alert ("Okey! Producto agregado! 🥂")
             }    
-                let respuesta = confirm ("¿Destapamos otra cerveza? 🍺")
-                if (respuesta === true){
+                let continuar = confirm ("¿Destapamos otra cerveza? 🍺")
+                if (continuar === true){
                     iniciarCompra ()
+                }
+                if (continuar != true){
+                    return
                 }
 
             else{
@@ -64,26 +67,24 @@ function comprar (){
     if (carrito.length != 0){
         const nuevaCompra = new Compra (carrito)
         alert ('😊 El total de tu compra es de: $' + nuevaCompra.obtenerSubtotal ())
-
+            
         let precioMayorista = confirm ("¿Contás con beneficio mayorista? 🚚")
-            if (precioMayorista === true){
-                mayorista = 0.7
-                const nuevaCompra = new Compra (carrito)
+            if (precioMayorista === true && carrito.length != 0){
+                mayorista = 0.8
                 alert ('😊 El total de tu compra es de: $' + nuevaCompra.obtenerSubtotal() * mayorista)
             } 
             else{
                 mayorista = 1
             }
-    }
-    
+
     let respuesta = confirm ("¿Confirmas la compra? 😎")
         if (respuesta === true){
             alert ("Tu compra quedó confirmada 🥳 \nNos contactaremos para gestionar el pago.")
             carrito.length = 0
         }
-
-    else{
-        console.warn ("⛔ El carrito está vacío")
-        return
+        else{
+            alert ("Gracias por tu visita! 😄")
+            carrito.length = 0
+        }
     }
 }
