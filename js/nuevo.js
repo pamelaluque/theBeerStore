@@ -64,16 +64,16 @@ function comprar (){
     if (carrito.length != 0){
         const nuevaCompra = new Compra (carrito)
         alert ('😊 El total de tu compra es de: $' + nuevaCompra.obtenerSubtotal ())
-    }
-    
-    let precioMayorista = confirm ("¿Contás con beneficio mayorista? 🚚")
-    if (precioMayorista === true){
-        mayorista = 0.7
-        const nuevaCompra = new Compra (carrito)
-        alert ('😊 El total de tu compra es de: $' + nuevaCompra.obtenerSubtotal() * mayorista)
 
-    } else{
-        mayorista = 1
+        let precioMayorista = confirm ("¿Contás con beneficio mayorista? 🚚")
+            if (precioMayorista === true){
+                mayorista = 0.7
+                const nuevaCompra = new Compra (carrito)
+                alert ('😊 El total de tu compra es de: $' + nuevaCompra.obtenerSubtotal() * mayorista)
+            } 
+            else{
+                mayorista = 1
+            }
     }
     
     let respuesta = confirm ("¿Confirmas la compra? 😎")
