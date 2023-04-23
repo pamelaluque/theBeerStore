@@ -9,26 +9,27 @@
 
 body{
     background-color: #DACC3E;
+}
+
+body header{
+    background-color: #DACC3E;
+    background-size: cover;
     color: #474B24;
     margin: 20px;
     padding: 20px;
-    height: 100vh;
+    height: 100hv;
+    width: auto;
     display:flex;
     flex-direction: column;    
     justify-content: center;
     align-items: center;
 }
-
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+body main{
+    padding-bottom: 20px;
 }
 
 img.logo{
-    width: 50%;
+    width: 350px;
     height: auto;
     padding: 20px;
     border-radius: 50%;
@@ -43,7 +44,74 @@ h1{
     text-align: center;
 }
 
-h2{
+.contenedorCards{
+    background-color: #DACC3E;
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.contenedorProducto{
+    background: white;
+    border: 1px solid #474B24;
+    border-radius: 7px;
+    height: 180px;
+    width: 150px;
+    text-align: center;
+    display: block;
+    
+    /* FORMATO DEL TEXTO
+    font-size: 14px;
+    font-weight: normal;
+    color:#474B24;
+    text-align: center; */
+
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;*/
+}
+
+.contenedorProducto:hover{
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+    /*border: 2px solid #474B24;*/
+    cursor: pointer;
+}
+
+.cardImg{
+    padding-top: 1px;
+    text-align: center;
+    height: 45%;
+}
+
+.cardName{
+    font-size: 15px;
+    font-weight: bolder;
+    color: #474B24;
+    margin: 10px;
+    text-align: center;
+}
+
+.cardButton{
+    text-align: center;
+    background-color:#DACC3E;
+    border: 1px solid #474B24;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 1px 5px 1px;
+    font-weight: bold;
+    color: #474B24;
+
+
+}
+
+p{
     font-size: 1rem;
     font-weight: bold;
     color: #474B24;
@@ -51,7 +119,8 @@ h2{
     text-align: center;
 }
 
-li{
+
+/*li{
     text-decoration: none;
     list-style: none;
     text-align: center;
@@ -60,14 +129,14 @@ li{
 
 li:hover{
     cursor: pointer;
-}
+}*/
 
 footer{
     background-color: white;
     background-size: 100vw;
-    height: 75px;
     padding: 8px;
-    margin: 20px;
+    margin: 0;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 12px;
+    font-weight: lighter;
 }

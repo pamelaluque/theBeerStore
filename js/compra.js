@@ -1,4 +1,4 @@
-class Compra {
+/*class Compra {
     constructor(carritoDeCompras) {
         this.carrito = carritoDeCompras
     }
