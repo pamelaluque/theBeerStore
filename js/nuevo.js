@@ -1,21 +1,46 @@
-const carrito = []
+//VARIABLES
+//const imgCarrito = document.getElementById("imgCarrito")
+const contenedorCards = document.querySelector("div#contenedorCards")
+const barraSearch = document.querySelector("barraSearch#barraSearch")
+//const carrito = recuperarCarrito()
 
-//ARRAY DE OBJETOS
-const articulos = [{codigo: 1, imagen: '../img/bohemianPilsenerBotella.jpg', nombre: 'Bohemian Pilsener Botella', importe: 300},
-                   {codigo: 2, imagen: '../img/bohemianPilsenerChop.jpg', nombre: 'Bohemian Pilsener Chop', importe: 300},
-                   {codigo: 3, imagen: '../img/bohemianPilsenerClassic.jpg', nombre: 'Bohemian Pilsener Classic', importe: 300},
-                   {codigo: 4, imagen: '../img/bohemianPilsenerLarger.jpg', nombre: 'Bohemian Pilsener Larger', importe: 300},
-                   {codigo: 5, imagen: '../img/veraIpaBotella.jpg', nombre: 'Vera Ipa Botella', importe: 300},
-                   {codigo: 6, imagen: '../img/veraIpaChop.jpg', nombre: 'Vera Ipa Chop', importe: 300},
-                   {codigo: 7, imagen: '../img/veraIpaClassic.jpg', nombre: 'Vera Ipa Classic', importe: 300},
-                   {codigo: 8, imagen: '../img/veraIpaLarger.jpg', nombre: 'Vera Ipa Larger', importe: 300},
-                   {codigo: 9, imagen: '../img/weisseBotella.jpg', nombre: 'Weisse Botella', importe: 300},
-                   {codigo: 10, imagen: '../img/weisseChop.jpg', nombre: 'Weisse Chop', importe: 300},
-                   {codigo: 11, imagen: '../img/weisseClassic.jpg', nombre: 'Weisse Classic', importe: 300},
-                   {codigo: 12, imagen: '../img/weisseLarger.jpg', nombre: 'Weisse Larger', importe: 300}]
+//ARMADO DE CARDS - HTML
+//VER EL BUTTON
+function estructuraCardHTML(cerveza) {
+return `<div class="contenedorProducto" id="contenedorProducto">
+            <div class="cardImg"><img scr='${cerveza.imagen}'></div>
+            <div class="cardName">${cerveza.nombre}</div>
+            <div class="cardPrice">$ ${cerveza.importe}</div>
+        </div>`
+}
 
-/*
-var nacimiento = 1234
+
+//CARGAR CATÁLOGO
+function cargarCatalogo(array) {
+    contenedorCards.innerHTML = ""
+    array.forEach(cerveza => {
+        contenedorCards.innerHTML += estructuraCardHTML(cerveza)
+    })
+}
+
+cargarCatalogo (catalogo)
+
+/* ESTRUCTURA DE HTML CARD
+<div class="contenedorProducto" id="contenedorProducto">
+    <img src="./img/bohemianPilsenerBotella.jpg" class="cardImg" alt="Imagen de Bohemian Pilsener Botella">
+    <h2 class="cardName">Bohemian Pilsener Botella</h2>
+    <p class="cardPrice">$300</p>
+    <button class="cardButton">Agregar al carrito</button>
+</div>
+
+CHEQUEAR ESTO QUE FALTA EN EL HTML DE LA CARD
+            <div class="cardButton">
+                <button class="button button-outline button-add" id="${cerveza.codigo}" title="Agregar al carrito"><img src="images/basket.png"></button>
+            </div>
+
+*/
+
+/*var nacimiento = 1234
 const beer = "🍻Elije el número de cerveza que deseas destapar: \n 1. Vera Ipa \n 2. Weisse \n 3. Amber Large \n 4. Bohemian Pilsener \n 5. Hoppy Larger \n"
 
 //VALIDACIÓN DE EDAD
@@ -95,4 +120,4 @@ function comprar (){
             carrito.length = 0
         }
     }
-}
+}*/
