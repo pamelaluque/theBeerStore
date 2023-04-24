@@ -1,19 +1,19 @@
 //VARIABLES
-//const imgCarrito = document.getElementById("imgCarrito")
 const contenedorCards = document.querySelector("div#contenedorCards")
-const barraSearch = document.querySelector("barraSearch#barraSearch")
-//const carrito = recuperarCarrito()
+const barraSearch = document.querySelector("input#barraSearch")
+const carrito = recuperarCarrito()
 
 //ARMADO DE CARDS - HTML
-//VER EL BUTTON
 function estructuraCardHTML(cerveza) {
 return `<div class="contenedorProducto" id="contenedorProducto">
-            <div class="cardImg"><img scr='${cerveza.imagen}'></div>
+            <div class="cardImg"><img src="${cerveza.imagen}"></div>
             <div class="cardName">${cerveza.nombre}</div>
             <div class="cardPrice">$ ${cerveza.importe}</div>
+            <div class="addButton">
+                <button class="cardButton" id="${cerveza.codigo}" title="Agregar al carrito">Agregar al carrito</button>
+            </div>
         </div>`
 }
-
 
 //CARGAR CATÁLOGO
 function cargarCatalogo(array) {
@@ -21,24 +21,48 @@ function cargarCatalogo(array) {
     array.forEach(cerveza => {
         contenedorCards.innerHTML += estructuraCardHTML(cerveza)
     })
+    activarBotones()
 }
 
 cargarCatalogo (catalogo)
 
-/* ESTRUCTURA DE HTML CARD
-<div class="contenedorProducto" id="contenedorProducto">
-    <img src="./img/bohemianPilsenerBotella.jpg" class="cardImg" alt="Imagen de Bohemian Pilsener Botella">
-    <h2 class="cardName">Bohemian Pilsener Botella</h2>
-    <p class="cardPrice">$300</p>
-    <button class="cardButton">Agregar al carrito</button>
-</div>
+//FUNCION DE BUSQUEDA DE PRODUCTOS EN CATALOGO
+function filtrarCatalogo(valor) {
+    let resultado = catalogo.filter(cerveza => cerveza.nombre.toLowerCase().includes(valor.toLowerCase()))
+        if (resultado.length > 0){
+            cargarCatalogo(resultado)
+        }
+}
 
-CHEQUEAR ESTO QUE FALTA EN EL HTML DE LA CARD
-            <div class="cardButton">
-                <button class="button button-outline button-add" id="${cerveza.codigo}" title="Agregar al carrito"><img src="images/basket.png"></button>
-            </div>
+barraSearch.addEventListener("search", (e)=> {
+    //console.log(e.target.value)
+    filtrarCatalogo(e.target.value)
+})
 
-*/
+//FUNCION ACTIVAR BOTONES - AGREGAR AL CARRITO
+function activarBotones() {
+    const botonesAgregar = document.querySelectorAll("button.cardButton")
+    for (let botonAgregar of botonesAgregar){
+        console.log (botonAgregar.id)
+        botonAgregar.addEventListener("click", ()=> {
+            let resultado= catalogo.find(cerveza => cerveza.codigo === parseInt(botonAgregar.id))
+                carrito.push(resultado)
+                guardarCarrito()
+    })
+    }
+}
+
+//FUNCION GUARDAR EN LOCALSTORAGE INFO CARRITO
+function guardarCarrito() {
+    localStorage.setItem("articulosCarrito", JSON.stringify(carrito))
+}
+
+//FUNCION RECUPERAR CARRITO
+function recuperarCarrito() {
+    return JSON.parse(localStorage.getItem("articulosCarrito")) || []
+}
+
+recuperarCarrito()
 
 /*var nacimiento = 1234
 const beer = "🍻Elije el número de cerveza que deseas destapar: \n 1. Vera Ipa \n 2. Weisse \n 3. Amber Large \n 4. Bohemian Pilsener \n 5. Hoppy Larger \n"

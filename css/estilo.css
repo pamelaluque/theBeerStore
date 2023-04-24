@@ -74,31 +74,19 @@ h1{
     width: 150px;
     text-align: center;
     display: block;
-    
-    /* FORMATO DEL TEXTO
-    font-size: 14px;
-    font-weight: normal;
-    color:#474B24;
-    text-align: center; */
-
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;*/
 }
 
 .contenedorProducto:hover{
     transform: scale(1.1);
     transition-duration: 0.2s;
-    /*border: 2px solid #474B24;*/
     cursor: pointer;
 }
 
-.cardImg{
-    padding-top: 1px;
+.cardImg img{
+    padding-top: 10px;
     text-align: center;
-    height: 45%;
+    height: 80px;
+    width: auto;
 }
 
 .cardName{
@@ -127,8 +115,6 @@ h1{
     padding: 1px 5px 1px;
     font-weight: bold;
     color: #474B24;
-
-
 }
 
 p{
@@ -138,18 +124,6 @@ p{
     margin: 10px;
     text-align: center;
 }
-
-
-/*li{
-    text-decoration: none;
-    list-style: none;
-    text-align: center;
-    padding: 10px;
-}
-
-li:hover{
-    cursor: pointer;
-}*/
 
 footer{
     background-color: white;
