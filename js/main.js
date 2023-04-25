@@ -5,8 +5,8 @@ const barraSearch = document.querySelector("input#barraSearch")
 const carrito = recuperarCarrito()
 
 //VALIDACIÓN DE EDAD
-    var nacimiento = prompt ("Bienvenido! 😎 \n Ingresa tu año de nacimiento por favor (YYYY)")
-    nacimiento > "2005" && nacimiento != (typeof num) ? alert ("😩 Lo siento mucho! \n Podrás ingresar cuando hayas cumplido los 18!") : cargarCatalogo (catalogo)
+var nacimiento = prompt ("Bienvenido! 😎 \n Ingresa tu año de nacimiento por favor (YYYY)")
+nacimiento > "2005" && nacimiento != (typeof num) ? alert ("😩 Lo siento mucho! \n Podrás ingresar cuando hayas cumplido los 18!") : cargarCatalogo (catalogo)
 
 //ARMADO DE CARDS - HTML
 function estructuraCardHTML(cerveza) {
