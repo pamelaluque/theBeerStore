@@ -17,7 +17,7 @@ body header{
     color: #474B24;
     margin: 20px;
     padding: 20px;
-    height: 100hv;
+    min-height: 50vh;
     width: auto;
     display:flex;
     flex-direction: column;    
@@ -26,6 +26,34 @@ body header{
 }
 body main{
     padding-bottom: 20px;
+}
+
+body form{
+    min-height: 20vh;
+}
+
+form{
+    display: block;
+    text-align: center;
+}
+
+.btnCarrito{
+    position: relative;
+    padding-left: 75%;
+    z-index: 9998;
+}
+
+#imgCarrito{
+    width: auto;
+    height: 60px;
+    padding: 2px;
+    border: 2px solid #474B24;
+    border-radius: 20px;
+}
+
+#imgCarrito:hover{
+    cursor: pointer;
+
 }
 
 img.logo{
@@ -44,7 +72,42 @@ h1{
     text-align: center;
 }
 
-.barraSearch #barraSearch{
+#yearInput{
+    background-color: transparent;
+    border: 1px solid #474B24;
+    border-radius: 7px;
+    box-shadow: none;
+    height: 120px;
+    padding: 10px;
+    margin: 5px;
+    width: 30%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.buttonVerificar{
+    background-color: white;
+    border: 1px solid #474B24;
+    border-radius: 7px;
+    box-shadow: none;
+    height: 25px;
+    width: 30%;
+    text-align: center;
+    font-size: 16px;
+    color: #474B24;
+    font-weight: bold;
+}
+.buttonVerificar:hover{
+    cursor: pointer;
+}
+
+.barraSearch{
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+
+.cardFilter{
     background-color: transparent;
     border: 1px solid #474B24;
     border-radius: 7px;
@@ -52,7 +115,9 @@ h1{
     height: 20px;
     padding: 15px;
     margin: 20px;
-    width: 100%;
+    width: 90vw;
+    justify-content: center;
+    text-align: center;
 }
 
 .contenedorCards{
@@ -85,7 +150,7 @@ h1{
 .cardImg img{
     padding-top: 10px;
     text-align: center;
-    height: 80px;
+    height: 70px;
     width: auto;
 }
 
@@ -124,14 +189,79 @@ p{
     margin: 10px;
     text-align: center;
 }
+.filter{
+    display: none;
+}
 
-footer{
+.mainCarrito{
+    text-align: center;
+    padding: 20px;
+    min-height: 95vh;
+}
+
+table{
+    width: 90vw;
+    height: auto;
+    padding: 5px;
+    margin: 10px;
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    border-radius: 3px;
+}
+
+thead tr{
+    background-color: #474B24;
+    color: white;
+}
+
+#tablehead{
+    padding: 10px;
+    font-size: 15px;
+    font-weight:lighter;
+    width: auto;
+    height: 20px;
+    border-radius: 3px;
+}
+
+tbody tr:nth-child(even) {
+    background: white;
+}
+
+.buttonDelete{
+    background-color: white;
+    border-color: white;
+    border-radius: 2px;
+}
+
+.buttonDelete:hover{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.buttonInicio, .buttonComprar {
+    text-align: center;
+    background-color:#474B24;
+    border: 1px solid #474B24;
+    border-radius: 3px;
+    font-size: 13px;
+    padding: 8px;
+    color: white;
+    font-weight: normal;
+}
+
+footer h3{
     background-color: white;
     background-size: 100vw;
     width: 100vw;
+    min-height: 5vh;
     padding: 8px;
     margin: 0;
+    font-size: 14px;
     text-align: center;
-    font-size: 12px;
     font-weight: lighter;
 }

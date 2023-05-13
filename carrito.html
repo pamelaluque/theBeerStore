@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="./js/storage.js"></script>
+    <script src="./js/cards.js"></script>
+    <script defer src="./js/carrito.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>The beer store - Carrito de compras</title>
+</head>
+<body>
+    <main class="mainCarrito">
+        <h1>The Beer Store</h1>
+        <p>Productos agregados al carrito</p>    
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="tablehead">Código</th>
+                        <th id="tablehead">Cerveza</th>
+                        <th id="tablehead">Importe</th>
+                        <th id="tablehead">Quitar</th>
+                    </tr>
+                </thead>
+                <tbody class="bodyCarrito">
+                    <!-- Carga dinámica de carrito -->
+                </tbody>
+            </table>
+        </section>
+        <div class="centrar-div">
+            <p>Total: $ <span>0.00</span></p>
+            <p>Total con IVA: $ <span id="IVA">0.00</span></p>
+        </div>
+        <div class="centrar-div">
+            <button class="buttonInicio"><a href="index.html">Agregar otros productos</a></button>
+            <button class="buttonComprar" id="btnComprar">CONFIRMAR COMPRA</button>
+        </div>
+    </main>
+
+    <footer>
+        <h3>By Pamela Luque
+            <br>
+            Javascript - Comisión #39490
+        </h3>
+    </footer>
+</body>
+</html>

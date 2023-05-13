@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +7,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <link rel="stylesheet" href="./css/estilo.css">
-    <script src="./js/cards.js"></script>
-    <script defer src="./js/main.js"></script>
-    <script src="./js/storage.js"></script>
-    <title>The beer store</title>
+    <script defer src="./js/verifyAge.js"></script>
+    <title>The Beer Store - Permiso de ingreso/Mayoría de edad -</title>
 </head>
 <body>
     <header>
-        <div class="btnCarrito">
-            <img src="./img/carrito.jpg" id="imgCarrito" title="Carrito" alt="Carrito">
-        </div>
-
         <img class="logo" src="./img/beerStoreIcon.png" alt="Logo The Beer Store">
         <h1>Welcome to The Beer Store!</h1>
+        <p>Por favor, ingresa tu fecha de nacimiento y haz click en verificar.</p>
     </header>
 
     <main>
-        <div class="barraSearch">
-            <input type="search" class="cardFilter" placeholder="Ingresa la cerveza que querés destapar">
-        </div>
-        <div class="contenedorCards">
-            <!-- Carga dinámica de productos -->
-        </div>
+        <form class="formYear">
+            <input type="date" id="yearInput" placeholder="(YYYY)" required>
+            <br>
+            <button type="button" class="buttonVerificar" onclick="verifyAge()">Verificar</button>
+        </form>
     </main>
 
     <footer>
